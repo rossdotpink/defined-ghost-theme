@@ -17,8 +17,6 @@ body {
 
 img {
   max-width: 100%;
-  /* Custom: hide them all */
-  display: none;
 }
 
 figure {
