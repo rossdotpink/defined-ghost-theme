@@ -1,14 +1,24 @@
 /* Put your styles (or personal collection of CSS frameworks) here */
 
+/* Nice Chinese font */
+@font-face {
+  font-family: 'CJKFont';
+  src: url('/fonts/WCL-03.ttf')  format('truetype');
+}
+
 body {
   max-width: 800px;
   margin-right: auto;
   margin-left: auto;
   line-height: 1.5;
+
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 img {
   max-width: 100%;
+  /* Custom: hide them all */
+  display: none;
 }
 
 figure {
@@ -24,6 +34,29 @@ figcaption {
   display: inline-block;
 }
 
+/* Main header */
+
+div.main-header__text-container > * {
+  padding: 0;
+  margin: 0;
+  display: inline;
+  line-height: 88px;
+}
+
+.main-header__blog-description {
+  float: right;
+}
+
+ul.nav > li {
+  display: inline;
+}
+
+/* Articles */
+
+article.post-teaser {
+  display: flex;
+  flex-flow: row;
+}
 
 /* IMAGE WIDTH STYLES */
 /* ================== */
@@ -36,13 +69,13 @@ PROTIP:
 Try something like as a starting point for centering images that are wider than their parent container's width:
 
 .full-bleed {
-	  width: 100vw;
-	  position: relative;
-	  left: 50%;
-	  right: 50%;
-	  margin-left: -50vw;
-	  margin-right: -50vw;
-	}
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
 
 For large images that aren't full width, but are larger than their parent, just replace 100vw with your max width (say, 1000px), and then replace the -50vw margins with -{NUM}px / 2 (in this case, -500px). You can see a version of this techinique in action in the stylesheet of my MNML Ghost theme:
 https://github.com/curiositry/mnml-ghost-theme
@@ -145,3 +178,4 @@ Want something a bit leaner? You can drop the snippet I used in my premium Weblo
 .error ~ .message-error {
   display: block;
 }
+
